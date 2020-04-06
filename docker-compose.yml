@@ -4,7 +4,6 @@ services:
     image: jun552313/python-nlp100
     tty: true
     volumes:
-      - ./:/work:cached
-    working_dir: /work
-    environment:
-      - HOME=/work
+      - ./.bash_aliases:/root/.bash_aliases
+      - ./:/root/work:cached
+    working_dir: /root/work
