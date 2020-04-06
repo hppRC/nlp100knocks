@@ -15,3 +15,6 @@ head -n 3 popular-names.txt
 
 # Q15
 tail -n 3 popular-names.txt
+
+# Q16
+N=3; split popular-names.txt -n l/$N -d popular-names --additional-suffix=.txt
