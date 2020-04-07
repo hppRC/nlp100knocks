@@ -1,9 +1,8 @@
 version: '3'
 services:
   app:
-    image: jun552313/python-nlp100
+    image: jun552313/python-nlp100:latest
     tty: true
     volumes:
-      - ./.bash_aliases:/root/.bash_aliases
       - ./:/root/work:cached
     working_dir: /root/work
