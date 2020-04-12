@@ -1,4 +1,4 @@
-from util import extract_from_neko
+from utils import extract_from_neko
 
 for sentence in extract_from_neko():
     for i, token in enumerate(sentence):
