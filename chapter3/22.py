@@ -1,5 +1,8 @@
 import json
+import re
 
 with open("jawiki-uk.json") as f:
-    uk = [json.loads(line) for line in f.readlines()]
-    print(*map(lambda x: "\n".join(x["category"]), uk))
+    uk = json.loads(f.readline())
+
+text = uk["text"]
+print(*re.findall(r'^\[\[Category:(.*)\]\]$', text, re.MULTILINE), sep="\n")
