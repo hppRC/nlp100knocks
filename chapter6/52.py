@@ -19,7 +19,8 @@ tfidf = TfidfVectorizer(strip_accents=None,
                         lowercase=False,
                         preprocessor=None)
 
-param_grid = [{'vect__ngram_range': [(1, 1)],
+param_grid = [
+            {'vect__ngram_range': [(1, 1)],
                 'vect__stop_words': [None],
                 'vect__tokenizer': [nltk.word_tokenize],
                 'clf__penalty': ['l2'],
