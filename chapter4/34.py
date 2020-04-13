@@ -1,18 +1,17 @@
 from utils import extract_from_neko
 
 for sentence in extract_from_neko():
-    for i, token in enumerate(sentence):
-        surface, base, pos, pos1 = token.values()
-
-        if not (surface == "の" and pos == "助詞" and pos1 == "連体化"):
-            continue
-        if (i == 0 or i == len(sentence) - 1):
-            continue
-
-        pre = sentence[i - 1]
-        nex = sentence[i + 1]
-
-        if not (pre["pos"] == "名詞" and nex["pos"] == "名詞"):
-            continue
-
-        print(f"{pre['surface']}の{nex['surface']}")
+    tmp = ""
+    word_count = 0
+    for token in sentence:
+        surface, _, pos, _ = token.values()
+        if pos == "名詞":
+            tmp += surface
+            word_count += 1
+        elif tmp and word_count >= 2:
+            print(tmp)
+            tmp = ""
+            word_count = 0
+        else:
+            tmp = ""
+            word_count = 0

@@ -146,3 +146,6 @@ static
 .bash_history
 .python_history
 .bash_aliases
+
+chapter6/__MACOSX
+chapter6/*.csv

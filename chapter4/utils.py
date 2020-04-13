@@ -1,4 +1,4 @@
-def extract_from_neko():
+def extract_from_neko() -> dict:
     result = []
     with open("./neko.txt.mecab") as f:
         sentence = []
@@ -17,4 +17,6 @@ def extract_from_neko():
                 tmp = {"surface": surface, "base": base,
                        "pos": pos, "pos1": pos1}
                 sentence.append(tmp)
+    # {'surface': '捻る', 'base': '捻る', 'pos': '動詞', 'pos1': '自立'}
+    # surface, base, pos, pos1 = token.values()
     return result
